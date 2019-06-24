@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>My Trip Advisor - My Trip</title>
+
+<link rel="stylesheet" href="libs/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+
+<script src="libs/jquery-3.3.1.min.js"></script>
+<script src="libs/js.cookie.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc0sXBV7JRdgqRFNjyG1p85LtbfQqIkog"></script>
+<script src="scripts/mytrips.js"></script>
+</head>
+<body>
+
+  <div id="container">
+    <div id="header" class="inverted">
+      <div>
+        <a href="index.html"><span></span></a>
+
+        <div class="menu-items right">
+          <a href="mytrip.html">마이트립</a>
+          <img src="images/line_maintop_gray.png">
+          <a href="register.html">회원가입</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="body" class="detail">
+      <div class="mytrip-container">
+        <div id="map"></div>
+        <ul id="mytrip-list"></ul>
+      </div>
+    </div>
+
+  </div>
+
+  <li id="mytrip-item-template" class="mytrip-item">
+    <span class="item-icon"></span>
+    <span class="item-name"></span>
+    <span class="item-line"></span>
+    <span class="item-city-name"></span>
+    <span class="item-remove"></span>
+  </li>
+
+</body>
+</html>
