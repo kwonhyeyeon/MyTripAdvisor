@@ -4,7 +4,7 @@
 
 $(function(){
 	var id = parseId(window.location.search);
-	console.log('id', id);
+	getDetail(id);
 	showMap();
 });
 
