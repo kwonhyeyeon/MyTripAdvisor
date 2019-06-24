@@ -229,3 +229,77 @@ background-image: url('../images/image_logo_color.png');
     background-color: #fff;
     overflow: auto;
 }
+
+/* 회원가입 */
+.form-box .inner {
+	padding: 60px 70px;
+}
+
+#form-register {
+	font-size: 15px;
+}
+
+#inp-password {
+	margin-top: 26px;
+}
+
+.div-gender {
+	margin-top: 12px;
+}
+
+.div-gender .txt-warning {
+	margin-top: 2px;
+}
+
+#inp-female {
+	margin-left: 20px;
+}
+
+.div-birth {
+	margin-top: 17px;
+}
+
+.div-birth .txt-warning {
+	margin-top: 10px;
+}
+
+#inp-accept {
+	margin-top: 30px;
+}
+
+#btn-submit {
+	margin-top: 50px;
+}
+
+.overflow {
+	height: 200px;
+}
+
+#btn-back {
+	background-color: #A4AAB2;
+}
+
+.ui-selectmenu-text {
+	color: #505050;
+	font-weight: 400;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active {
+	color: #000;
+}
+
+#sel-birth-button {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.div-accept .txt-warning {
+	margin-top: 27px;
+}
+
+.txt-warning {
+	display: none;
+	font-size: 13px;
+	color: red;
+	margin-top: -5px;
+}
