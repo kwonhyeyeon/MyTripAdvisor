@@ -1,6 +1,7 @@
 /**
  * 
  */
+var map;
 
 $(function(){
 	var id = parseId(window.location.search);
@@ -8,25 +9,7 @@ $(function(){
 	showMap();
 });
 
-// 인자로 '문자열'을 받은 후, 그 안에 id값을 찾아 반환한다.
-function parseId(str){
-	// substring() 함수로 ?을 제외한 나머지 문자열을 가져온다. url에 포함된 &(엠퍼샌드) 기호로 연결되어 있으면 split() 함수를 사용한다.
-	var s = str.substring(1);
-	// split()을 실행해 키와 값으로 구성된 배열을 반환 받는다.
-	var args = s.split('&');
-	
-	// 반복문을 사용해 id란 키를 찾아내고 찾지 못하면 null을 반환한다.
-	for(var i = 0; i < args.length; i++){
-		var arg = args[i];
-		var tokens = arg.split('=');
-		
-		if(tokens[0] === 'id'){
-			return tokens[1];
-		}
-	}
-	return null;
-}
-// getDetail() 함수를 만들고 페이지 로드시에 실행되어야 하므로 호출 부분에도 추가.
+//getDetail() 함수를 만들고 페이지 로드시에 실행되어야 하므로 호출 부분에도 추가.
 function getDetail(id){
 	
 	// 갤러리아를 사용하기 위해서는 이미지들을 <img>태그로 만들어 넣어야 한다.
@@ -54,7 +37,7 @@ function getDetail(id){
 		showMarker(r.position.x, r.position.y);
 		
 		
-		$('.brn-register').click(function(){
+		$('.btn-register').click(function(){
 			var myTrips = Cookies.getJSON('MYTRIPS');
 			
 			// 존재하지 않을 경우 빈 배열로 초기화
@@ -75,6 +58,25 @@ function getDetail(id){
 			alert("여행지가 등록되었습니다!");
 		});
 	});
+}
+
+// 인자로 '문자열'을 받은 후, 그 안에 id값을 찾아 반환한다.
+function parseId(str){
+	// substring() 함수로 ?을 제외한 나머지 문자열을 가져온다. url에 포함된 &(엠퍼샌드) 기호로 연결되어 있으면 split() 함수를 사용한다.
+	var s = str.substring(1);
+	// split()을 실행해 키와 값으로 구성된 배열을 반환 받는다.
+	var args = s.split('&');
+	
+	// 반복문을 사용해 id란 키를 찾아내고 찾지 못하면 null을 반환한다.
+	for(var i = 0; i < args.length; i++){
+		var arg = args[i];
+		var tokens = arg.split('=');
+		
+		if(tokens[0] === 'id'){
+			return tokens[1];
+		}
+	}
+	return null;
 }
 
 function showMap(){
