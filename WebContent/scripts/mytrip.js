@@ -35,6 +35,8 @@ function generateMyTripList(list) {
 		var markerLable = MARKER_LABELS[i];
 		
 		var $item = $("#mytrip-item-template").clone().removeAttr("id");
+		
+		$item.data("id", myTrip.id);
 		$item.find(".item-name").html(markerLable + '. ' + myTrip.name);
 		$item.find(".item-city-name").html(myTrip.cityName);
 		
@@ -43,10 +45,12 @@ function generateMyTripList(list) {
 		// 해당 여행지 목록과 지도에서 사라지고 쿠키에 저장된 데이터도 사라져야한다
 		$item.find(".item-remove").click(function() {
 			var $elem = $(this).closest(".mytrip-item");
+			var id = $elem.data("id");
+			
 			$elem.remove();
 			
 			// 마커 제거
-			marker[id].setMap(null);
+			markers[id].setMap(null);
 			markers[id] = null;
 			
 			// 쿠키에 저장된 목록에서 제거한 여행지 제외 후 다시 쿠키에 저장하는 로직
@@ -58,7 +62,7 @@ function generateMyTripList(list) {
 		
 		var marker = new google.maps.Marker({
 			position : pos,
-			label : markerLabel,
+			label : markerLable,
 			map : map
 		});
 		
